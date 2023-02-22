@@ -142,6 +142,9 @@ VENDOR_SECURITY_PATCH := $(BOOT_SECURITY_PATCH)
 # SEPolicy
 include hardware/oplus/sepolicy/qti/SEPolicy.mk
 
+# SMMU
+TARGET_USES_SMMU_PROXY := true
+
 # UFS
 SOONG_CONFIG_NAMESPACES += ufsbsg
 SOONG_CONFIG_ufsbsg += ufsframework
