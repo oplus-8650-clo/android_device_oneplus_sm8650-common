@@ -167,6 +167,7 @@ ro.hardware.keystore_desede=true
 # Media
 debug.c2.use_dmabufheaps=1
 debug.stagefright.c2inputsurface=-1
+ro.mediaserver.64b.enable=true
 vendor.media.omx=0
 
 # Pasr
