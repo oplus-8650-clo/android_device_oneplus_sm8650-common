@@ -21,6 +21,8 @@ namespace_imports = [
     'device/oneplus/sm8650-common',
     'hardware/oplus',
     'vendor/qcom/common/system/av',
+    'vendor/qcom/common/system/perf',
+    'vendor/qcom/common/vendor/perf',
 ]
 
 
@@ -75,6 +77,8 @@ lib_fixups: lib_fixups_user_type = {
         'vendor.qti.hardware.dpmservice@1.1',
         'vendor.qti.hardware.embmssl@1.0',
         'vendor.qti.hardware.embmssl@1.1',
+        'vendor.qti.hardware.limits@1.0',
+        'vendor.qti.hardware.limits@1.1',
         'vendor.qti.hardware.qccsyshal@1.0',
         'vendor.qti.hardware.qccsyshal@1.1',
         'vendor.qti.hardware.qccsyshal@1.2',
@@ -181,8 +185,6 @@ blob_fixups: blob_fixups_user_type = {
             r'(service\s+vendor\.dpmd\s+/vendor/bin/vendor\.dpmd\s*\n)',
             r'\1    user root\n'
         ),
-    'vendor/etc/pwr/PowerFeatureConfig.xml': blob_fixup()
-        .regex_replace(r'(<Name>GamePowerOptFeature</Name>\s*<Enable>)0(<\/Enable>)', r'\g<1>1\g<2>'),
     'vendor/etc/seccomp_policy/gnss@2.0-qsap-location.policy': blob_fixup()
         .add_line_if_missing('sched_get_priority_min: 1')
         .add_line_if_missing('sched_get_priority_max: 1'),
