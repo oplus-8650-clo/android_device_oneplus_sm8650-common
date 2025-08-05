@@ -23,6 +23,7 @@ namespace_imports = [
     'vendor/qcom/common/system/av',
     'vendor/qcom/common/system/perf',
     'vendor/qcom/common/vendor/perf',
+    'vendor/qcom/common/vendor/adreno/u',
 ]
 
 
