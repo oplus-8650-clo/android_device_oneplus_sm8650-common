@@ -20,11 +20,6 @@ from extract_utils.main import (
 namespace_imports = [
     'device/oneplus/sm8650-common',
     'hardware/oplus',
-    'hardware/qcom-caf/sm8650',
-    'hardware/qcom-caf/wlan',
-    'vendor/qcom/opensource/commonsys/display',
-    'vendor/qcom/opensource/commonsys-intf/display',
-    'vendor/qcom/opensource/dataservices',
 ]
 
 
@@ -48,6 +43,7 @@ lib_fixups: lib_fixups_user_type = {
         'vendor.qti.hardware.qccsyshal@1.0',
         'vendor.qti.hardware.qccsyshal@1.1',
         'vendor.qti.hardware.qccsyshal@1.2',
+        'vendor.qti.hardware.qxr-V1-ndk',
         'vendor.qti.hardware.wifidisplaysession@1.0',
         'vendor.qti.imsrtpservice@3.0',
         'vendor.qti.imsrtpservice@3.1',
