@@ -7,5 +7,5 @@
           package="com.android.systemui.overlay.oplus">
     <overlay android:targetPackage="com.android.systemui"
              android:isStatic="true"
-             android:priority="300" />
+             android:priority="800" />
 </manifest>
