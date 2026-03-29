@@ -146,9 +146,6 @@ ro.camerax.extensions.enabled=true
 ro.hardware.camera=oemlayer
 vendor.camera.aux.packageexcludelist=org.telegram.messenger,org.thunderdog.challegram,us.zoom.videomeetings
 
-# Chipset
-ro.soc.manufacturer=QTI
-
 # Crypto
 ro.crypto.metadata_init_delete_all_keys.enabled=true
 
