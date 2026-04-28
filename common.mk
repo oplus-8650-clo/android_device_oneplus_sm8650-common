@@ -285,6 +285,7 @@ TARGET_BOARD_PLATFORM := pineapple
 # QTI components
 TARGET_COMMON_QTI_COMPONENTS := \
     adreno \
+    alarm \
     av \
     bt \
     overlay \
