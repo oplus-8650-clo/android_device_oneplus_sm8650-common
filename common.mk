@@ -31,7 +31,6 @@ PRODUCT_PACKAGES += \
     android.hardware.audio.effect@7.0-impl \
     android.hardware.audio.service \
     android.hardware.soundtrigger@2.3-impl \
-    audio.bluetooth.default \
     audio.r_submix.default \
     audio.usb.default \
     libagm_compress_plugin \
@@ -78,14 +77,9 @@ $(call soong_config_set_bool,android_hardware_audio,skip_speaker_layout_channel_
 
 # Bluetooth
 PRODUCT_PACKAGES += \
-    android.hardware.bluetooth.audio-impl \
     lib_bt_aptx \
     lib_bt_ble \
     lib_bt_bundle
-
-PRODUCT_COPY_FILES += \
-    frameworks/native/data/etc/android.hardware.bluetooth.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.bluetooth.xml \
-    frameworks/native/data/etc/android.hardware.bluetooth_le.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.bluetooth_le.xml
 
 # Boot control
 PRODUCT_PACKAGES += \
@@ -317,6 +311,7 @@ PRODUCT_COPY_FILES += \
 
 # QTI components
 TARGET_COMMON_QTI_COMPONENTS := \
+    bt \
     overlay
 
 # QSPA
