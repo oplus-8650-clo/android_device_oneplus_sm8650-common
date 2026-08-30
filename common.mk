@@ -160,7 +160,7 @@ PRODUCT_COPY_FILES += \
 # Init
 PRODUCT_PACKAGES += \
     fstab.qcom \
-    fstab.qcom.vendor_ramdisk \
+    fstab.qcom.first_stage_ramdisk \
     init.aospa.rc \
     init.class_main.sh \
     init.kernel.post_boot.sh \
