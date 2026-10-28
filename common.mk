@@ -315,6 +315,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     vendor/qcom/opensource/power/config/pineapple/powerhint.xml:$(TARGET_COPY_OUT_VENDOR)/etc/powerhint.xml
 
+# QTI components
+TARGET_COMMON_QTI_COMPONENTS := \
+    overlay
+
 # QSPA
 PRODUCT_PACKAGES += \
     qspa_vendor.rc \
