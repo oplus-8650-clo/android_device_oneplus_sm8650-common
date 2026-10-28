@@ -312,7 +312,8 @@ PRODUCT_COPY_FILES += \
 # QTI components
 TARGET_COMMON_QTI_COMPONENTS := \
     bt \
-    overlay
+    overlay \
+    wfd
 
 # QSPA
 PRODUCT_PACKAGES += \
