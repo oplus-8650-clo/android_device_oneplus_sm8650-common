@@ -280,17 +280,14 @@ $(call inherit-product, hardware/oplus/overlay/generic/generic.mk)
 
 PRODUCT_ENFORCE_RRO_TARGETS := *
 PRODUCT_PACKAGES += \
-    FrameworksResTargetCommon \
     NcmTetheringOverlay \
     OPlusFrameworksResCommon \
     OPlusSettingsResCommon \
-    OPlusSystemUIResCommon \
-    WifiResTarget
+    OPlusSystemUIResCommon
 
 ifneq ($(TARGET_IS_TABLET),true)
 PRODUCT_PACKAGES += \
-    CarrierConfigResCommon \
-    FrameworksResTargetPhone
+    CarrierConfigResCommon
 endif
 
 # Partitions
@@ -315,6 +312,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     vendor/qcom/opensource/power/config/pineapple/powerhint.xml:$(TARGET_COPY_OUT_VENDOR)/etc/powerhint.xml
 
+# QTI components
+TARGET_COMMON_QTI_COMPONENTS := \
+    overlay
+
 # QSPA
 PRODUCT_PACKAGES += \
     qspa_vendor.rc \
@@ -322,9 +323,6 @@ PRODUCT_PACKAGES += \
 
 # SecureElement
 ifneq ($(TARGET_IS_TABLET),true)
-PRODUCT_PACKAGES += \
-    SecureElementResTarget_Vendor
-
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/permissions/com.android.se.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/com.android.se.xml
 endif
