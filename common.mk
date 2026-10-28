@@ -308,6 +308,7 @@ PRODUCT_COPY_FILES += \
 
 # QTI components
 TARGET_COMMON_QTI_COMPONENTS := \
+    av \
     bt \
     overlay \
     wfd
