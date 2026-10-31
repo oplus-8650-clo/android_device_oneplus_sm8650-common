@@ -199,10 +199,6 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.consumerir.xml:$(TARGET_COPY_OUT_ODM)/etc/permissions/android.hardware.consumerir.xml
 endif
 
-# Kernel
-PRODUCT_COPY_FILES += \
-    kernel/oneplus/sm8650/modules.systemdlkm_blocklist.msm.pineapple:$(TARGET_COPY_OUT_VENDOR_DLKM)/lib/modules/system_dlkm.modules.blocklist
-
 # Keymint
 PRODUCT_PACKAGES += \
     android.hardware.hardware_keystore_V3.xml
@@ -294,6 +290,35 @@ TARGET_COMMON_QTI_COMPONENTS := \
     usb \
     wfd \
     wlan
+
+# Disable DLKM generation until build support is available
+TARGET_KERNEL_DLKM_DISABLE := false
+
+# Tech specific flags
+TARGET_KERNEL_DLKM_AUDIO_OVERRIDE := true
+TARGET_KERNEL_DLKM_BT_OVERRIDE := true
+TARGET_KERNEL_DLKM_CAMERA_OVERRIDE := true
+TARGET_KERNEL_DLKM_NFC_OVERRIDE := true
+TARGET_KERNEL_DLKM_ESE_OVERRIDE := true
+TARGET_KERNEL_DLKM_DATA_OVERRIDE := true
+TARGET_KERNEL_DLKM_DISPLAY_OVERRIDE := true
+TARGET_KERNEL_DLKM_MM_DRV_OVERRIDE := true
+TARGET_KERNEL_DLKM_SECURE_MSM_OVERRIDE := true
+TARGET_KERNEL_DLKM_THERMAL_OVERRIDE := true
+TARGET_KERNEL_DLKM_TOUCH_OVERRIDE := true
+TARGET_KERNEL_DLKM_VIDEO_OVERRIDE := true
+TARGET_KERNEL_DLKM_WLAN_OVERRIDE := true
+TARGET_KERNEL_DLKM_MMRM_OVERRIDE := true
+TARGET_KERNEL_DLKM_DATARMNET_OVERRIDE := true
+TARGET_KERNEL_DLKM_DATARMNETEXT_OVERRIDE := true
+TARGET_KERNEL_DLKM_SYNX_OVERRIDE := true
+TARGET_KERNEL_DLKM_DATAIPA_OVERRIDE := true
+TARGET_KERNEL_DLKM_FASTRPC_OVERRIDE := true
+TARGET_KERNEL_DLKM_SPU_OVERRIDE := true
+
+ifneq ("$(wildcard device/qcom/$(TARGET_BOARD_PLATFORM)-kernel/vendor_dlkm/system_dlkm.modules.blocklist)", "")
+PRODUCT_COPY_FILES += device/qcom/$(TARGET_BOARD_PLATFORM)-kernel/vendor_dlkm/system_dlkm.modules.blocklist:$(TARGET_COPY_OUT_VENDOR_DLKM)/lib/modules/system_dlkm.modules.blocklist
+endif
 
 # QSPA
 PRODUCT_PACKAGES += \
