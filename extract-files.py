@@ -117,7 +117,6 @@ lib_fixups: lib_fixups_user_type = {
         'vendor.qti.hardware.radio.uim_remote_client@1.2',
         'vendor.qti.hardware.radio.uim_remote_server@1.0',
         'vendor.qti.hardware.slmadapter@1.0',
-        'vendor.qti.hardware.vpp-V1-ndk',
         'vendor.qti.hardware.wifidisplaysession@1.0',
         'vendor.qti.ims.callcapability@1.0',
         'vendor.qti.ims.callcapabilityaidlservice-V1-ndk',
@@ -192,6 +191,11 @@ blob_fixups: blob_fixups_user_type = {
             r'(service\s+vendor\.dpmd\s+/vendor/bin/vendor\.dpmd\s*\n)',
             r'\1    user root\n'
         ),
+    'vendor/etc/media_pineapple/video_system_specs.json': blob_fixup()
+        .regex_replace(r'.*OPLUS_BUG_COMPATIBILITY\n.*\n.*"libqc2vppfilter\.so",\n.*OPLUS_BUG_COMPATIBILITY.*\n', '')
+        .regex_replace(r'.*"QC2PostProcessingFilters"[\s\S]*?\},\n\n', ''),
+    'vendor/etc/public.libraries.txt': blob_fixup()
+        .regex_replace(r'lib(QEGA\.qti|aiboost|aiboost_llm)\.so\n', ''),
     'vendor/etc/sensors/hals.conf': blob_fixup()
         .add_line_if_missing('sensors.oplus.so'),
     'vendor/lib64/libqcodec2_core.so': blob_fixup()
