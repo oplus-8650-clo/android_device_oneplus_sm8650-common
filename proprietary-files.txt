@@ -237,9 +237,6 @@ vendor/lib64/rfs/dsp/libvpp_svc_skel.so
 vendor/lib64/rfs/dsp/libvpp_vqa_networks.so
 vendor/lib64/rfs/dsp/libworker_pool.so
 
-# ESE
-vendor/lib64/vendor.qti.esepowermanager@1.0.so
-
 # EVA
 vendor/etc/eva/facedetection/bias.dat
 vendor/etc/eva/facedetection/weight.dat
@@ -271,10 +268,6 @@ vendor/lib64/hw/libqtigatekeeper.so
 vendor/lib64/libOpenCL_adreno.so
 
 # HDCP
-vendor/bin/hdcp1prov
-vendor/bin/hdcp2p2prov
-vendor/lib64/libhdcp1prov.so
-vendor/lib64/libhdcp2p2prov.so
 vendor/lib64/libhdcpsrm.so
 vendor/lib64/libmm-hdcpmgr.so
 
@@ -403,8 +396,6 @@ odm/lib64/libqcodec2_dolbydecoderfilter.so
 odm/lib64/libqcodec2_dolbyencoderfilter.so
 
 # Media configs
-odm/etc/camera/media_profiles.xml:vendor/etc/media_profiles_cliffs_v1.xml;TRYSRCFIRST
-odm/etc/media_profiles_V1_0.xml
 vendor/etc/media_cliffs_v0/video_system_specs.json
 vendor/etc/media_cliffs_v1/video_system_specs.json
 vendor/etc/media_pineapple/video_system_specs.json
@@ -414,9 +405,6 @@ vendor/etc/media_codecs_performance_cliffs_v0.xml
 vendor/etc/media_codecs_performance_cliffs_v1.xml
 vendor/etc/media_codecs_performance_pineapple_vendor.xml:vendor/etc/media_codecs_performance_pineapple.xml;TRYSRCFIRST
 vendor/etc/media_codecs_pineapple_vendor.xml:vendor/etc/media_codecs_pineapple.xml;TRYSRCFIRST
-vendor/etc/media_profiles_V1_0.xml
-vendor/etc/media_profiles_cliffs_v0.xml
-vendor/etc/media_profiles_pineapple.xml
 
 # Misc
 odm/etc/init/init.oppo.reserve.rc
@@ -428,17 +416,6 @@ vendor/lib64/MLPD_2.pickle
 vendor/lib64/MLPD_3.pickle
 vendor/lib64/MLPD_4.pickle
 vendor/lib64/MLPD_5.pickle
-
-# MMI
-vendor/bin/hw/vendor.qti.hardware.factory-service
-vendor/bin/hw/vendor.qti.hardware.factory@1.0-service
-vendor/bin/mmid
-vendor/etc/init/vendor.qti.hardware.factory-service.rc
-vendor/etc/init/vendor.qti.hardware.factory@1.0-service.rc
-vendor/etc/permissions/vendor.qti.hardware.factory.xml
-vendor/etc/vintf/manifest/vendor.qti.hardware.factory.ifactory.xml
-vendor/lib64/vendor.qti.hardware.factory@1.0.so
-vendor/lib64/vendor.qti.hardware.factory@1.1.so
 
 # Native public libraries
 vendor/etc/public.libraries.txt
@@ -567,37 +544,6 @@ vendor/lib64/libssd.so
 vendor/lib64/vendor.qti.hardware.qseecom-V1-ndk.so
 vendor/lib64/vendor.qti.hardware.qseecom@1.0.so
 
-# QVR
-vendor/bin/qvrdatalogger
-vendor/bin/qvrdatauploader
-vendor/bin/qvrservicetest
-vendor/etc/qvr/cfg/557/0/65536/mtplanai.txt
-vendor/etc/qvr/cfg/557/0/65536/mtplanai_6dof_config.xml
-vendor/etc/qvr/cfg/557/0/65536/mtplanai_qvr_3dof_tracker_config.txt
-vendor/etc/qvr/qvr_hid_device_list.txt
-vendor/etc/qvr/qvr_usb_device_list.txt
-vendor/etc/qvr/qvrservice_config.txt
-vendor/etc/seccomp_policy/qvr@2.0.policy
-vendor/etc/vintf/manifest/vendor.qti.hardware.qxr-service.xml
-vendor/lib64/libDspIOProxy_stub.so
-vendor/lib64/libMapService.so
-vendor/lib64/libQEGA.qti.so
-vendor/lib64/libScenescape.so
-vendor/lib64/libStereoRectifyWrapper.so
-vendor/lib64/libeye_tracking_dsp_sample_stub.so
-vendor/lib64/libhalide_hexagon_host.so
-vendor/lib64/libpolygon.so
-vendor/lib64/libqvr_cam_cdsp_driver_stub.so
-vendor/lib64/libqvr_cdsp_driver_stub.so
-vendor/lib64/libqvr_eyetracking_plugin.so
-vendor/lib64/libqvrcamera_client.qti.so
-vendor/lib64/libqvrcameraplayback.so
-vendor/lib64/libqvrservice.so;DISABLE_DEPS
-vendor/lib64/libqvrservice_client.qti.so
-vendor/lib64/libtracker_6dof_impl.so
-vendor/lib64/vendor.qti.hardware.qxr-V1-ndk.so;MODULE_SUFFIX=_vendor
-vendor/lib64/vendor.qti.qegahal-V1-ndk_platform.so
-
 # SCVE
 vendor/lib64/libFace3DTA.so
 vendor/lib64/libFace3D_hlos.so
@@ -607,9 +553,6 @@ vendor/lib64/libscveCommon_stub.so
 vendor/lib64/libscveObjectSegmentation.so
 vendor/lib64/libscveObjectTracker.so
 vendor/lib64/libscveObjectTracker_stub.so
-
-# Secure processor
-vendor/lib64/libspcom.so
 
 # Security
 vendor/bin/hw/android.hardware.security.keymint-service-qti
@@ -784,13 +727,6 @@ vendor/bin/ssr_setup
 vendor/bin/subsystem_ramdump
 vendor/lib64/libsubsystem_control.so
 
-# SXR
-vendor/bin/hw/sxrservice
-vendor/etc/init/sxrd.rc
-vendor/etc/seccomp_policy/sxr@2.0.policy
-vendor/lib64/libsxrservice.so
-vendor/lib64/libsxrservice_client.qti.so
-
 # Synx
 vendor/lib64/libos.so
 vendor/lib64/libsynx.so
@@ -829,7 +765,6 @@ vendor/lib64/libsi.so
 vendor/lib64/libtrustedapploader.so
 
 # UBWCP
-vendor/bin/ubwcconvert
 vendor/lib64/libubwcp.so
 
 # Video
@@ -837,11 +772,6 @@ vendor/lib64/libstreamparser.so
 vendor/lib64/libvideotxr.so
 vendor/lib64/libvideoutils.so
 vendor/lib64/qti.video.utils.videobufferlayout.so
-
-# VM
-vendor/bin/vmmgr
-vendor/etc/init/vmmgr.rc
-vendor/etc/vmmgr.conf
 
 # VPP
 vendor/bin/vppservice
