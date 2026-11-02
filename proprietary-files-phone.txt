@@ -75,7 +75,6 @@ vendor/lib64/vendor.qti.hardware.data.latency@1.0.so;MODULE_SUFFIX=_vendor
 vendor/lib64/vendor.qti.hardware.data.lce@1.0.so;MODULE_SUFFIX=_vendor
 vendor/lib64/vendor.qti.hardware.data.lceaidlservice-V1-ndk.so;MODULE_SUFFIX=_vendor
 vendor/lib64/vendor.qti.hardware.data.qmiaidlservice-V1-ndk.so;MODULE_SUFFIX=_vendor
-vendor/lib64/vendor.qti.hardware.factory-V1-ndk.so
 vendor/lib64/vendor.qti.hardware.mwqemadapter@1.0.so;MODULE_SUFFIX=_vendor
 vendor/lib64/vendor.qti.hardware.mwqemadapteraidlservice-V1-ndk.so;MODULE_SUFFIX=_vendor
 vendor/lib64/vendor.qti.hardware.slmadapter@1.0.so;MODULE_SUFFIX=_vendor
@@ -84,7 +83,7 @@ vendor/lib64/vendor.qti.latency@2.1.so;MODULE_SUFFIX=_vendor
 vendor/lib64/vendor.qti.latency@2.2.so;MODULE_SUFFIX=_vendor
 vendor/lib64/vendor.qti.latencyaidlservice-V1-ndk.so;MODULE_SUFFIX=_vendor
 
-# Context Hub
+# Context hub
 odm/etc/init/android.hardware.contexthub-service.qmi.rc
 odm/etc/vintf/manifest/android.hardware.contexthub-service.qmi.xml
 vendor/bin/hw/android.hardware.contexthub-service.qmi
@@ -157,7 +156,7 @@ odm/etc/init/vendor.oplus.hardware.biometrics.fingerprint@2.1-service.rc
 odm/etc/vintf/manifest/manifest_oplus_fingerprint_aidl_v3.xml
 odm/lib64/libclstc_fod_color.so
 
-# Fingerprint Pay
+# Fingerprint pay
 odm/bin/hw/vendor.oplus.hardware.biometrics.fingerprintpay@1.0-service
 odm/etc/init/vendor.oplus.hardware.biometrics.fingerprintpay@1.0-service.rc
 odm/etc/vintf/manifest/manifest_oplus_ifaa.xml
@@ -292,40 +291,26 @@ vendor/lib64/vendor.qti.ims.rcsuceaidlservice-V1-ndk.so;MODULE_SUFFIX=_vendor
 vendor/lib64/vendor.qti.imsrtpservice@3.0.so;MODULE_SUFFIX=_vendor
 vendor/lib64/vendor.qti.imsrtpservice@3.1.so;MODULE_SUFFIX=_vendor
 
+# MMI
+vendor/lib64/vendor.qti.hardware.factory-V1-ndk.so
+
+# QMS
+vendor/bin/qms
+vendor/etc/init/qms.rc
+vendor/etc/seccomp_policy/qms.policy
+vendor/etc/vintf/manifest/qms-saidl.xml
+vendor/lib64/libqms_client.so
+
+# RemoteFS
+vendor/bin/rmt_storage
+vendor/etc/init/vendor.qti.rmt_storage.rc
+
 # RIL
-odm/bin/hw/subsys_daemon
-odm/bin/commcenterd
-odm/bin/init.subsys.sh
-odm/etc/init/commcenterd.rc
-odm/etc/init/subsys_daemon.rc
-odm/etc/vintf/manifest/device_manifest_communication_center_aidl.xml
-odm/etc/vintf/manifest/device_manifest_subsys.xml
-odm/etc/QtiFtmPublicKey.pem
-odm/etc/oem_stx_platform_license.pfm
-odm/etc/plugin_config.xml
-odm/lib64/lib-virtual-modem-protos.so
-odm/lib64/libcommcenterfw.so
-odm/lib64/libcommcenterutils.so
-odm/lib64/libdmtp-protos-lite.so
-odm/lib64/libdmtp.so
-odm/lib64/libdmtpclient.so
-odm/lib64/libmindroid-app.so
-odm/lib64/libmindroid-framework.so
-odm/lib64/libqti-radio-service.so
-odm/lib64/libqti-subsys-service.so
-odm/lib64/libradio-service.so
-odm/lib64/libradioapis.so
-odm/lib64/librfapis.so
-odm/lib64/libsubsys-service.so
-odm/lib64/libsubsys-utils.so
-odm/lib64/libvasapi.so
 vendor/bin/hw/qcrilNrd
 vendor/bin/ks
-vendor/bin/qms
 vendor/bin/qtigetprop
 vendor/bin/qtisetprop
 vendor/etc/init/qcrilNrd.rc
-vendor/etc/init/qms.rc
 vendor/etc/qcril_database/upgrade/config/0006.0_config.sql
 vendor/etc/qcril_database/upgrade/config/0007.0_config.sql
 vendor/etc/qcril_database/upgrade/config/0008.0_config.sql
@@ -354,11 +339,9 @@ vendor/etc/qcril_database/upgrade/other/0014_version_update_modules.sql
 vendor/etc/qcril_database/upgrade/other/0015_version_add_iccid_clir_pref_table.sql
 vendor/etc/qcril_database/qcrilNr.db
 vendor/etc/seccomp_policy/qcrilnr@2.0.policy
-vendor/etc/seccomp_policy/qms.policy
 vendor/etc/vintf/manifest/android.hardware.radio.config.xml
 vendor/etc/vintf/manifest/atfwd-saidl.xml
 vendor/etc/vintf/manifest/deviceinfo-saidl.xml
-vendor/etc/vintf/manifest/qms-saidl.xml
 vendor/etc/vintf/manifest/vendor.qti.hardware.radio.qtiradioconfig.xml
 vendor/etc/O_STX_platform_license.pfm
 vendor/etc/O_TDD-Bypass_SM7675_platform_license.pfm
@@ -387,7 +370,6 @@ vendor/lib64/libqcrildataaidl.so
 vendor/lib64/libqcrildatactl.so
 vendor/lib64/libqcrildataqos.so
 vendor/lib64/libqdpr.so
-vendor/lib64/libqms_client.so
 vendor/lib64/libril-db.so
 vendor/lib64/libril-legacy.so
 vendor/lib64/libril-qc-ltedirectdisc.so
@@ -451,6 +433,36 @@ vendor/lib64/vendor.qti.hardware.radio.qtiradio@2.4.so;MODULE_SUFFIX=_vendor
 vendor/lib64/vendor.qti.hardware.radio.qtiradio@2.5.so;MODULE_SUFFIX=_vendor
 vendor/lib64/vendor.qti.hardware.radio.qtiradio@2.6.so;MODULE_SUFFIX=_vendor
 vendor/lib64/vendor.qti.hardware.radio.qtiradioconfig-V4-ndk.so
+
+# RIL (Oplus)
+odm/bin/hw/subsys_daemon
+odm/bin/commcenterd
+odm/bin/init.subsys.sh
+odm/etc/init/commcenterd.rc
+odm/etc/init/subsys_daemon.rc
+odm/etc/vintf/manifest/device_manifest_communication_center_aidl.xml
+odm/etc/vintf/manifest/device_manifest_subsys.xml
+odm/etc/QtiFtmPublicKey.pem
+odm/etc/oem_stx_platform_license.pfm
+odm/etc/plugin_config.xml
+odm/lib64/lib-virtual-modem-protos.so
+odm/lib64/libcommcenterfw.so
+odm/lib64/libcommcenterutils.so
+odm/lib64/libdmtp-protos-lite.so
+odm/lib64/libdmtp.so
+odm/lib64/libdmtpclient.so
+odm/lib64/libmindroid-app.so
+odm/lib64/libmindroid-framework.so
+odm/lib64/libqti-radio-service.so
+odm/lib64/libqti-subsys-service.so
+odm/lib64/libradio-service.so
+odm/lib64/libradioapis.so
+odm/lib64/librfapis.so
+odm/lib64/libsubsys-service.so
+odm/lib64/libsubsys-utils.so
+odm/lib64/libvasapi.so
+
+# RIL (UIM)
 vendor/lib64/vendor.qti.hardware.radio.uim-V1-ndk.so
 vendor/lib64/vendor.qti.hardware.radio.uim@1.0.so;MODULE_SUFFIX=_vendor
 vendor/lib64/vendor.qti.hardware.radio.uim@1.1.so;MODULE_SUFFIX=_vendor
@@ -461,10 +473,6 @@ vendor/lib64/vendor.qti.hardware.radio.uim_remote_client@1.1.so;MODULE_SUFFIX=_v
 vendor/lib64/vendor.qti.hardware.radio.uim_remote_client@1.2.so;MODULE_SUFFIX=_vendor
 vendor/lib64/vendor.qti.hardware.radio.uim_remote_server-V1-ndk.so
 vendor/lib64/vendor.qti.hardware.radio.uim_remote_server@1.0.so;MODULE_SUFFIX=_vendor
-
-# RemoteFS
-vendor/bin/rmt_storage
-vendor/etc/init/vendor.qti.rmt_storage.rc
 
 # Secure element
 odm/bin/hw/android.hardware.secure_element-service.qti
