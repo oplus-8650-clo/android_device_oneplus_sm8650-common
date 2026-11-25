@@ -301,6 +301,10 @@ endif
 PRODUCT_PACKAGES += \
     android.hardware.thermal-service.qti
 
+# TouchSettings
+PRODUCT_PACKAGES += \
+    OplusTouchSettings
+
 # Update engine
 PRODUCT_PACKAGES += \
     update_engine \
