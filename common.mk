@@ -27,8 +27,9 @@ PRODUCT_VIRTUAL_AB_COMPRESSION_METHOD := lz4
 
 # Audio
 PRODUCT_COPY_FILES += \
-$(foreach sku,pineapple cliffs, \
-    $(LOCAL_PATH)/configs/audio/audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio/sku_$(sku)/audio_policy_configuration.xml)
+    $(foreach sku,pineapple cliffs, \
+        $(LOCAL_PATH)/configs/audio/audio_effects.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio/sku_$(sku)/audio_effects.xml \
+        $(LOCAL_PATH)/configs/audio/audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio/sku_$(sku)/audio_policy_configuration.xml)
 
 $(call soong_config_set_bool,qtiaudio,pal_prefer_master_gain,true)
 $(call soong_config_set_bool,qtiaudio,pal_oplus_speaker_protection,true)
@@ -348,6 +349,9 @@ $(call inherit-product, packages/modules/Virtualization/apex/product_packages.mk
 # WiFi firmware symlinks
 PRODUCT_PACKAGES += \
     firmware_wlanmdsp.otaupdate_symlink
+
+# Inherit from hardware/dolby makefile.
+$(call inherit-product, hardware/dolby/dolby.mk)
 
 # Inherit from the proprietary files makefile.
 $(call inherit-product, vendor/oneplus/sm8650-common/sm8650-common-vendor.mk)
